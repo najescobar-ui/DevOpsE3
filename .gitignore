@@ -1,0 +1,28 @@
+# ---- Credenciales / secretos (NUNCA subir) ----
+.aws/
+*.pem
+*.key
+.env
+.env.*
+*credentials*
+*secret*.local
+
+# ---- Node ----
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# ---- kubeconfig local ----
+kubeconfig
+*.kubeconfig
+
+# ---- Sistema operativo / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ---- Logs / temporales ----
+*.log
+tmp/

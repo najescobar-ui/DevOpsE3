@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const {
-  DB_HOST = tienda-db, // acá resuelve internamente en eks
+  DB_HOST = "tienda-db", // acá resuelve internamente en eks
   DB_USER = "root",
   DB_PASSWORD = "admin123",
   DB_NAME = "tienda_perritos",

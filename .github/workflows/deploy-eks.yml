@@ -1,4 +1,4 @@
-name: CI/CD Tienda Perritos EKS
+name: CI/CD Tienda del Chancho Pedro EKS
 
 on:
   push:

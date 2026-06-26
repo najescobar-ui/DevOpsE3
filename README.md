@@ -72,7 +72,8 @@ El frontend hace de proxy: las llamadas a `/api/` se redirigen al backend dentro
 
 ## Despliegue (resumen)
 
-> Guía paso a paso completa en `EP3_PLAN_ENCARGO.md` (en la carpeta del curso).
+> Guía paso a paso completa (runbook real, como se hizo) en
+> [`docs/EP3_PLAN_ENCARGO_FINAL.md`](docs/EP3_PLAN_ENCARGO_FINAL.md).
 
 1. **Credenciales** (perfil dedicado del lab):
    ```bash
@@ -155,5 +156,6 @@ CRUD completo Front → Back → MySQL.
 
 ## Documentación adicional
 
+- [`docs/EP3_PLAN_ENCARGO_FINAL.md`](docs/EP3_PLAN_ENCARGO_FINAL.md) — runbook completo (como se hizo, comandos reales).
 - [`docs/IE5-secrets.md`](docs/IE5-secrets.md) — gestión de secrets y credenciales.
 - [`docs/IE6-logs-metricas.md`](docs/IE6-logs-metricas.md) — análisis de logs, métricas y tiempos.

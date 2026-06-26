@@ -132,7 +132,7 @@ app.delete("/api/productos/:id", async (req, res) => {
 app.get("/api/health", (req, res) => {
   res.status(200).json({
     status: "ok",
-    message: "Backend de tienda de perritos en ejecución."
+    message: "Backend de la Tienda del Chancho Pedro en ejecución."
   });
 });
 

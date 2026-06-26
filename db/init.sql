@@ -10,8 +10,11 @@ CREATE TABLE IF NOT EXISTS productos (
 );
 
 INSERT INTO productos (nombre, descripcion, precio, stock) VALUES
-('Alimento Cachorro Premium', 'Sabor a pollo, razas pequenas', 19990, 15),
-('Alimento Adulto Light', 'Control de peso, razas medianas', 17990, 8),
-('Snacks Dentales', 'Ayuda a la limpieza dental', 5990, 30),
-('Alimento Adulto Pedigree', 'Sabor carne', 15990, 40),
-('Bravery pollo Adulto raza pequena', 'Sabor a pollo', 25990, 20);
+('Tomates de campo', 'Cosechados esta manana, por kilo', 1990, 25),
+('Lechuga costina', 'Hoja crujiente, recien cortada', 990, 40),
+('Huevos de campo (docena)', 'De gallinas libres de la granja', 3490, 30),
+('Zanahorias organicas', 'Dulces y frescas, por kilo', 1290, 35),
+('Papas nativas', 'Saco de 2 kg', 2490, 20),
+('Choclo fresco', 'Unidad grande de temporada', 790, 50),
+('Zapallo italiano', 'Tierno, ideal para saltear', 1190, 28),
+('Miel de abeja artesanal', 'Frasco 500g, directa de la granja', 5990, 18);

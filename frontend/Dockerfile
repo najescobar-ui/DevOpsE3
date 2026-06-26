@@ -1,11 +1,12 @@
 FROM nginx:alpine
 
-# Copiar configuración de NGINX
+# Copiar configuraciï¿½n de NGINX
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-# Copiar archivos estáticos
+# Copiar archivos estaticos
 COPY index.html /usr/share/nginx/html/
 COPY app.js /usr/share/nginx/html/
+COPY img/ /usr/share/nginx/html/img/
 
 EXPOSE 80
 

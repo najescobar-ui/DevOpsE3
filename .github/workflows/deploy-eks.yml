@@ -3,6 +3,10 @@ name: CI/CD Tienda del Chancho Pedro EKS
 on:
   push:
     branches: [ main, dev ]
+    paths-ignore:        # cambios solo de documentación no disparan deploy
+      - '**.md'
+      - 'docs/**'
+      - '.gitignore'
   workflow_dispatch: {}
 
 env:

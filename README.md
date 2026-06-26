@@ -1,8 +1,8 @@
-# Tienda de Perritos — Despliegue en AWS EKS
+# Tienda del Chancho Pedro — Despliegue en AWS EKS
 
-Aplicación CRUD de productos para una tienda de alimentos para perros, desplegada en un clúster
-**AWS EKS** con CI/CD automatizado mediante **GitHub Actions**. Proyecto de la Evaluación Parcial
-N°3 — *Introducción a Herramientas Devops* (ISY1101).
+Aplicación CRUD de productos para una tienda de productos de la granja (verduras, hortalizas,
+huevos y miel), desplegada en un clúster **AWS EKS** con CI/CD automatizado mediante **GitHub
+Actions**. Proyecto de la Evaluación Parcial N°3 — *Introducción a Herramientas Devops* (ISY1101).
 
 > **Estado:** ✅ Desplegado y funcionando en AWS EKS (clúster `tienda-eks`, namespace `tienda`).
 > **URL pública:** http://a34e75236358f42498baab67bc16ca77-605256121.us-east-1.elb.amazonaws.com
@@ -32,8 +32,8 @@ N°3 — *Introducción a Herramientas Devops* (ISY1101).
          Clúster EKS (namespace: tienda) · 2 nodos t3.medium · us-east-1
 ```
 
-**Flujo CI/CD:** `git push main` → GitHub Actions → build imágenes Docker → push a Amazon ECR →
-`kubectl apply` + `set image` en EKS → rollout.
+**Flujo CI/CD:** `git push` (a `main` o `dev`) → GitHub Actions → build imágenes Docker → push a
+Amazon ECR → `kubectl apply` + `set image` en EKS → rollout.
 
 ## Componentes
 
@@ -51,7 +51,7 @@ El frontend hace de proxy: las llamadas a `/api/` se redirigen al backend dentro
 
 ```
 .
-├── frontend/                 # nginx + index.html + app.js (CRUD) + Dockerfile
+├── frontend/                 # nginx + index.html + app.js (CRUD) + img/ + Dockerfile
 ├── backend/                  # API Express (server.js) + Dockerfile
 ├── db/                       # MySQL 8 + init.sql (esquema + seed) + Dockerfile
 ├── k8s/                      # Manifiestos de Kubernetes

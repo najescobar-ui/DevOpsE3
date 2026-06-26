@@ -2,104 +2,138 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Tienda de Alimentos para Perritos &#128054;</title>
+  <title>Tienda del Chancho Pedro 🐷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
+    :root{
+      --barn:#B5402A; --barn-dark:#8F2F1E; --olive:#6B8E23; --olive-dark:#55711c;
+      --wheat:#E8B84B; --wheat-soft:#F2D38A; --cream:#FBF3E2; --card:#FFFDF7;
+      --ink:#3E2C1C; --muted:#917e66; --line:#E3D4B8;
     }
-    header {
-      background: #3b82f6;
-      color: white;
-      padding: 16px;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+      margin:0; color:var(--ink); line-height:1.55;
+      background:
+        radial-gradient(1200px 500px at 50% -120px, #fff7e6 0%, var(--cream) 60%),
+        repeating-linear-gradient(45deg, #f7ecd4 0 22px, #fbf3e2 22px 44px);
+      min-height:100vh;
     }
-    main {
-      max-width: 1000px;
-      margin: 20px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    /* ---------- HEADER / HERO ---------- */
+    header{ position:relative; padding:26px 16px 30px; text-align:center; overflow:hidden; }
+    .hero-row{
+      display:flex; align-items:center; justify-content:center; gap:24px;
+      max-width:1100px; margin:0 auto; flex-wrap:nowrap;
     }
-    h1, h2 {
-      margin-top: 0;
+    /* círculos del chancho con peluca en los extremos */
+    .pig-badge{
+      flex:none; width:140px; height:140px; border-radius:50%;
+      object-fit:cover; border:7px solid var(--wheat);
+      box-shadow:0 8px 18px rgba(62,44,28,.28), 0 0 0 3px var(--barn);
+      background:var(--card);
     }
-    .actions {
-      margin-bottom: 16px;
+    .pig-badge.left{ transform:rotate(-9deg); }
+    .pig-badge.right{ transform:rotate(9deg); }
+
+    /* imagen central de la granja con marco redondeado tipo letrero */
+    .hero-center{ flex:1; max-width:560px; }
+    .hero-frame{
+      position:relative; padding:10px; background:var(--card);
+      border:4px solid var(--barn); border-radius:28px 28px 30px 30px / 34px 34px 28px 28px;
+      box-shadow:0 14px 30px rgba(62,44,28,.30); transform:rotate(-1.2deg);
     }
-    button {
-      padding: 8px 16px;
-      margin-right: 8px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      background: #3b82f6;
-      color: white;
+    .hero-frame img{ width:100%; display:block; border-radius:20px; }
+    .hero-frame::after{
+      content:"🐷 Fresco y local"; position:absolute; bottom:-16px; left:50%;
+      transform:translateX(-50%) rotate(-1deg);
+      background:var(--olive); color:#fff; font-weight:700; font-size:.82rem;
+      padding:5px 16px; border-radius:99px; box-shadow:0 4px 10px rgba(62,44,28,.25);
+      white-space:nowrap;
     }
-    button.secondary {
-      background: #6b7280;
+    .title{ margin:22px 0 2px; }
+    .title h1{
+      margin:0; font-size:2.3rem; letter-spacing:-.5px; color:var(--barn-dark);
+      text-shadow:1px 1px 0 var(--wheat-soft);
     }
-    button.danger {
-      background: #ef4444;
+    .title .tag{
+      display:inline-block; margin-top:8px; color:var(--olive-dark); font-weight:700;
+      letter-spacing:2px; text-transform:uppercase; font-size:.78rem;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
+
+    /* ---------- MAIN ---------- */
+    main{ max-width:1000px; margin:8px auto 40px; padding:0 16px; }
+    .panel{
+      background:var(--card); border:2px solid var(--line); border-radius:20px;
+      padding:22px 24px; margin-bottom:22px; box-shadow:0 6px 16px rgba(62,44,28,.08);
     }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
+    .panel h2{
+      margin:0 0 14px; color:var(--barn-dark); font-size:1.3rem;
+      display:flex; align-items:center; gap:9px;
     }
-    th {
-      background: #e5e7eb;
+    .panel h2::before{ content:""; width:12px; height:24px; border-radius:4px;
+      background:linear-gradient(var(--wheat),var(--olive)); display:inline-block; }
+
+    .actions{ margin-bottom:6px; }
+    button{
+      font-family:inherit; padding:11px 20px; margin:4px 8px 4px 0; border:none;
+      border-radius:12px; cursor:pointer; font-weight:700; font-size:.95rem;
+      color:#fff; background:var(--olive); transition:transform .08s, filter .15s;
+      box-shadow:0 4px 0 var(--olive-dark);
     }
-    tr:nth-child(even) {
-      background: #f9fafb;
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 6px;
-      border-radius: 4px;
-      border: 1px solid #d1d5db;
-      box-sizing: border-box;
-    }
-    .status {
-      margin-top: 10px;
-      font-size: 0.9rem;
-    }
-    .status.ok {
-      color: #16a34a;
-    }
-    .status.error {
-      color: #dc2626;
+    button:hover{ filter:brightness(1.05); }
+    button:active{ transform:translateY(3px); box-shadow:0 1px 0 var(--olive-dark); }
+    button#btnGuardar{ background:var(--barn); box-shadow:0 4px 0 var(--barn-dark); }
+    button.secondary{ background:var(--muted); box-shadow:0 4px 0 #6f604d; }
+    button.danger{ background:#C0392B; box-shadow:0 4px 0 #922b21; }
+
+    table{ width:100%; border-collapse:separate; border-spacing:0; margin-top:8px; overflow:hidden;
+      border-radius:14px; border:1px solid var(--line); }
+    th,td{ padding:11px 12px; text-align:left; border-bottom:1px solid var(--line); }
+    th{ background:linear-gradient(var(--wheat),var(--wheat-soft)); color:var(--ink);
+      font-size:.82rem; text-transform:uppercase; letter-spacing:.5px; }
+    tr:last-child td{ border-bottom:none; }
+    tbody tr:nth-child(even){ background:#fbf6ea; }
+    tbody tr:hover{ background:#f3ead2; }
+
+    .form-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin-top:6px; }
+    label{ display:block; font-weight:700; margin-bottom:5px; color:var(--barn-dark); font-size:.9rem; }
+    input,textarea{ width:100%; padding:9px 11px; border:2px solid var(--line); border-radius:10px;
+      box-sizing:border-box; font-family:inherit; background:#fffdf9; }
+    input:focus,textarea:focus{ outline:none; border-color:var(--olive); }
+    .status{ margin-top:12px; font-size:.92rem; font-weight:600; min-height:1.2em; }
+    .status.ok{ color:var(--olive-dark); }
+    .status.error{ color:#C0392B; }
+
+    footer{ text-align:center; color:var(--muted); font-size:.82rem; padding:0 0 30px; }
+
+    @media (max-width:680px){
+      .pig-badge{ width:84px; height:84px; border-width:5px; }
+      .hero-row{ gap:10px; }
+      .title h1{ font-size:1.7rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Tienda de Alimentos para Perritos &#128054;</h1>
-    <p>Gestión CRUD de productos en contenedores Docker (Frontend + Backend + MySQL)</p>
+    <div class="hero-row">
+      <img class="pig-badge left" src="img/peluca.jpg" alt="Chancho Pedro con peluca" />
+      <div class="hero-center">
+        <div class="hero-frame">
+          <img src="img/granja.jpg" alt="Puesto de la granja del Chancho Pedro" />
+        </div>
+      </div>
+      <img class="pig-badge right" src="img/peluca.jpg" alt="Chancho Pedro con peluca" />
+    </div>
+    <div class="title">
+      <h1>Tienda del Chancho Pedro</h1>
+      <span class="tag">Productos de la granja · Fresco y local</span>
+    </div>
   </header>
+
   <main>
-    <section>
-      <h2>Productos</h2>
+    <section class="panel">
+      <h2>🥕 Productos de la granja</h2>
       <div class="actions">
         <button id="btnCargar">Cargar Productos</button>
       </div>
@@ -115,38 +149,42 @@
           </tr>
         </thead>
         <tbody id="tbodyProductos">
-          <!-- Aqu�� se insertan filas dinamicamente -->
+          <!-- filas dinámicas -->
         </tbody>
       </table>
     </section>
 
-    <section>
+    <section class="panel">
       <h2 id="formTitle">Nuevo producto</h2>
       <div class="form-grid">
         <div>
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" placeholder="Ej: Alimento Premium Cachorro" />
+          <input type="text" id="nombre" placeholder="Ej: Tomates de campo" />
         </div>
         <div>
           <label for="descripcion">Descripción</label>
-          <textarea id="descripcion" rows="2" placeholder="Ej: Sabor pollo, razas pequeñas"></textarea>
+          <textarea id="descripcion" rows="2" placeholder="Ej: Cosechados esta mañana"></textarea>
         </div>
         <div>
           <label for="precio">Precio</label>
-          <input type="number" id="precio" step="0.01" min="0" placeholder="Ej: 19990" />
+          <input type="number" id="precio" step="0.01" min="0" placeholder="Ej: 1990" />
         </div>
         <div>
           <label for="stock">Stock</label>
-          <input type="number" id="stock" min="0" placeholder="Ej: 10" />
+          <input type="number" id="stock" min="0" placeholder="Ej: 25" />
         </div>
       </div>
-      <div class="actions" style="margin-top: 12px;">
+      <div class="actions" style="margin-top:14px;">
         <button id="btnGuardar">Guardar</button>
         <button id="btnCancelar" class="secondary">Cancelar</button>
       </div>
       <div id="status" class="status"></div>
     </section>
   </main>
+
+  <footer>
+    🐷 Granja Don Pedro — Frontend + Backend + MySQL sobre AWS EKS
+  </footer>
 
   <script src="app.js"></script>
 </body>

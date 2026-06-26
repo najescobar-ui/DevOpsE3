@@ -1,5 +1,5 @@
 /**
- * Frontend simple para CRUD de productos de la tienda de perritos.
+ * Frontend simple para CRUD de productos de la Tienda del Chancho Pedro.
  */
 
 // Determinar la URL base de la API según el host

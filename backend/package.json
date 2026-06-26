@@ -1,7 +1,7 @@
 {
-  "name": "tienda-perritos-backend",
+  "name": "tienda-chancho-pedro-backend",
   "version": "1.0.0",
-  "description": "API backend para tienda de alimentos para perritos",
+  "description": "API backend para la Tienda del Chancho Pedro (productos de la granja)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

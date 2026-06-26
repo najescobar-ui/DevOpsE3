@@ -2,7 +2,7 @@ name: CI/CD Tienda Perritos EKS
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
   workflow_dispatch: {}
 
 env:

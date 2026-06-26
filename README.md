@@ -4,7 +4,9 @@ Aplicación CRUD de productos para una tienda de alimentos para perros, desplega
 **AWS EKS** con CI/CD automatizado mediante **GitHub Actions**. Proyecto de la Evaluación Parcial
 N°3 — *Introducción a Herramientas Devops* (ISY1101).
 
-> **Estado:** _completar a medida que avanza el despliegue (clúster, pipeline, URL pública)._
+> **Estado:** ✅ Desplegado y funcionando en AWS EKS (clúster `tienda-eks`, namespace `tienda`).
+> **URL pública:** http://a34e75236358f42498baab67bc16ca77-605256121.us-east-1.elb.amazonaws.com
+> _(la URL del ELB se regenera cada vez que se recrea el Service en una nueva sesión del lab)._
 
 ## Arquitectura
 
@@ -147,7 +149,11 @@ kubectl delete pod -l app=tienda-backend -n tienda   # self-healing: k8s recrea 
 En el navegador (URL del ELB): **Cargar Productos** lista el seed; crear/editar/eliminar valida el
 CRUD completo Front → Back → MySQL.
 
-## Equipo
+## Autor
 
-- _Integrante 1 — completar_
-- _Integrante 2 — completar_
+- **Najeeb Escobar Pérez** — trabajo individual (autorizado por el docente).
+
+## Documentación adicional
+
+- [`docs/IE5-secrets.md`](docs/IE5-secrets.md) — gestión de secrets y credenciales.
+- [`docs/IE6-logs-metricas.md`](docs/IE6-logs-metricas.md) — análisis de logs, métricas y tiempos.
